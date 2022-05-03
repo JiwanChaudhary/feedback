@@ -1,23 +1,16 @@
 import React from "react";
-import FeedbackData from "../data/FeedbackData";
-import {
-  Wrapper,
-  KeyId,
-  Card,
-  Rating,
-  Text,
-} from "../styledComponents/FeedbackList.styled";
+import FeedbackItem from "../components/FeedbackItem";
+import { Wrapper } from "../styledComponents/Feedback.styled";
 
-function FeedbackList() {
+function FeedbackList({ feedback }) {
+  if (!feedback || feedback.length === 0) {
+    return "No feedback found!";
+  }
+
   return (
     <Wrapper>
-      {FeedbackData.map((item) => (
-        <KeyId key={item.id}>
-          <Card>
-            <Rating>{item.rating}</Rating>
-            <Text>{item.text}</Text>
-          </Card>
-        </KeyId>
+      {feedback.map((item) => (
+        <FeedbackItem key={item.id} item={item} />
       ))}
     </Wrapper>
   );
