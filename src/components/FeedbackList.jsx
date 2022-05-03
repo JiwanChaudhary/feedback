@@ -1,6 +1,12 @@
 import React from "react";
 import FeedbackData from "../data/FeedbackData";
-import {Wrapper, KeyId, Card, Rating, Text} from "../styledComponents/FeedbackList.styled"
+import {
+  Wrapper,
+  KeyId,
+  Card,
+  Rating,
+  Text,
+} from "../styledComponents/FeedbackList.styled";
 
 function FeedbackList() {
   return (
