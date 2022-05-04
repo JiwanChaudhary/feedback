@@ -9,7 +9,7 @@ export const Card = styled.div`
   position: relative;
 `;
 export const Rating = styled.div`
-   position: relative;
+  position: relative;
   background: #f4f4f4;
   width: 50px;
   height: 50px;
@@ -22,3 +22,12 @@ export const Rating = styled.div`
 `;
 
 export const Text = styled.p``;
+
+export const DeleteButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+`;

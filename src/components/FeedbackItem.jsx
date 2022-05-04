@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
-import { Rating, Text } from "../styledComponents/Feedback.styled";
+import { Rating, Text, DeleteButton } from "../styledComponents/Feedback.styled";
 import CommonCard from "./common/Card";
 
 function FeedbackItem({ item, handleDelete }) {
@@ -8,9 +8,9 @@ function FeedbackItem({ item, handleDelete }) {
     <CommonCard>
       <Rating>{item.rating}</Rating>
       <Text>{item.text}</Text>
-      <button onClick={() => handleDelete(item.id)}>
+      <DeleteButton onClick={() => handleDelete(item.id)}>
         <FaTimes color="purple" />
-      </button>
+      </DeleteButton>
     </CommonCard>
   );
 }
