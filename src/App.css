@@ -1,14 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Bebas+Neue&family=Montserrat:wght@500&family=Orelega+One&family=Poppins:wght@400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Bebas+Neue&family=Montserrat:wght@500&family=Orelega+One&family=Poppins:wght@400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #202142;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    line-height: 1.6;
+  background-color: #202142;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  line-height: 1.6;
+}
+
+[type="radio"] {
+  opacity: 0;
+}
+
+[type="radio"]:checked ~ label {
+  background: #ff6a95;
+  color: #fff;
 }

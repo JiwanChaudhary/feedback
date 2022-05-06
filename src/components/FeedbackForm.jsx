@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CommonCard from "./common/Card";
 import Button from "./common/Button";
+import RatingSelect from "./RatingSelect";
 import {
   Form,
   YourFeedback,
@@ -13,6 +14,8 @@ const FeedbackForm = () => {
   const [text, setText] = useState("");
   const [disabled, isDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const [rating, setRating] = useState(0);
+  console.log(rating);
 
   function handleInputText(e) {
     setText(e.target.value);
@@ -27,6 +30,7 @@ const FeedbackForm = () => {
     <CommonCard>
       <Form>
         <YourFeedback>Please type your feedback below.</YourFeedback>
+        <RatingSelect select={(rating) => setRating(rating)} />
         <InputGroup>
           <InputText
             type="text"
@@ -37,7 +41,7 @@ const FeedbackForm = () => {
             Send
           </SubmitButton>
         </InputGroup>
-        { message && <p>{message}</p>}
+        {message && <p>{message}</p>}
       </Form>
     </CommonCard>
   );
