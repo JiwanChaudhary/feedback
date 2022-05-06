@@ -1,14 +1,26 @@
 import React, { useState } from "react";
 import CommonCard from "./common/Card";
 import Button from "./common/Button";
-import { Form, YourFeedback, InputGroup, InputText, SubmitButton } from "../styledComponents/FeedbackForm.styled";
+import {
+  Form,
+  YourFeedback,
+  InputGroup,
+  InputText,
+  SubmitButton,
+} from "../styledComponents/FeedbackForm.styled";
 
 const FeedbackForm = () => {
   const [text, setText] = useState("");
+  const [disabled, isDisabled] = useState(true);
+  const [message, setMessage] = useState("");
 
   function handleInputText(e) {
-    console.log(e);
     setText(e.target.value);
+
+    if (e.target.value === "" || e.target.value.trim().length <= 10) {
+      isDisabled(true);
+      setMessage("Text must be greater than 10 character");
+    }
   }
 
   return (
@@ -21,11 +33,11 @@ const FeedbackForm = () => {
             placeholder="Write your feedback here"
             onChange={handleInputText}
           />
-          <SubmitButton type="submit" version="primary">
+          <SubmitButton type="submit" version="primary" isDisabled={disabled}>
             Send
           </SubmitButton>
         </InputGroup>
-        {text}
+        { message && <p>{message}</p>}
       </Form>
     </CommonCard>
   );
