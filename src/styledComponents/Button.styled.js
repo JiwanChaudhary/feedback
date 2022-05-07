@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SubmitButton = styled.button`
-  /* background-color: ${({disabled}) => (disabled ? '#cccccc' : '#ff6a95')}; */
   color: #fff;
   border: 0;
   border-radius: 8px;
@@ -9,6 +8,7 @@ export const SubmitButton = styled.button`
   width: 100px;
   height: 40px;
   cursor: pointer;
+  margin-left: 10px;
 
   &:hover {
     transform: scale(0.98);

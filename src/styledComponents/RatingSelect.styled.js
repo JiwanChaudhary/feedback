@@ -6,6 +6,14 @@ export const Ul = styled.ul`
   justify-content: space-around;
   margin: 30px 0 40px;
   list-style: none;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
 `;
 export const Li = styled.li`
   position: relative;
@@ -19,12 +27,21 @@ export const Li = styled.li`
   border: 1px #eee solid;
   transition: 0.3s;
 
+  @media screen and (max-width: 600px) {
+    margin: 10px 3px;
+  }
+
   &:hover {
     background: #ff6a95;
     color: #fff;
   }
 `;
-export const Input = styled.input``;
+export const Input = styled.input`
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+
+`;
 
 export const Label = styled.label`
   position: absolute;
@@ -36,4 +53,7 @@ export const Label = styled.label`
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+  
 `;
+
+

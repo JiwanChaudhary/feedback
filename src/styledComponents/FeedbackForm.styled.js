@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-padding: 40px 20px;
+  padding: 40px 20px;
 `;
 
 export const YourFeedback = styled.h3``;
@@ -20,8 +20,18 @@ export const InputText = styled.input`
   font-size: 16px;
 
   &:focus {
-      outline: none;
+    outline: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 80%;
   }
 `;
 
 export const SubmitButton = styled.button``;
+
+export const Message = styled.div`
+  padding-top: 10px;
+  text-align: center;
+  color: rebeccapurple;
+`;

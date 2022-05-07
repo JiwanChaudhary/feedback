@@ -1,27 +1,38 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+padding: 0 20px;
+`;
 
 export const Card = styled.div`
   background-color: #fff;
   color: #333;
   margin: 20px 0;
+  border-radius: 10px;
   position: relative;
 `;
 export const Rating = styled.div`
   position: relative;
-  background: #f4f4f4;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
+  top: -15px;
+  left: -15px;
+  background: #ff6a95;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  padding: 4.5px;
   text-align: center;
   border-radius: 50%;
-  font-size: 19px;
+  font-size: 20px;
   border: 1px #eee solid;
   transition: 0.3s;
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+margin: 0;
+padding: 5px;
+position: relative;
+top: -10px;
+`;
 
 export const DeleteButton = styled.button`
   position: absolute;

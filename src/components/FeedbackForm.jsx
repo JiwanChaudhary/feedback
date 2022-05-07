@@ -7,6 +7,7 @@ import {
   YourFeedback,
   InputGroup,
   InputText,
+  Message,
 } from "../styledComponents/FeedbackForm.styled";
 
 const FeedbackForm = ({ addFeedback }) => {
@@ -50,7 +51,7 @@ const FeedbackForm = ({ addFeedback }) => {
             Send
           </Button>
         </InputGroup>
-        {message && <p style={{ color: "red" }}>{message}</p>}
+        {message && <Message>{message}</Message>}
       </Form>
     </CommonCard>
   );
