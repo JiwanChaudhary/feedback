@@ -21,3 +21,11 @@ body {
   background: #ff6a95;
   color: #fff;
 }
+
+.btn-primary {
+  background-color: #202142;
+}
+
+.btn-secondary {
+  background: #ff6a95;
+}

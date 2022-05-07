@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SubmitButton = styled.button`
+  /* background-color: ${({disabled}) => (disabled ? '#cccccc' : '#ff6a95')}; */
   color: #fff;
   border: 0;
   border-radius: 8px;

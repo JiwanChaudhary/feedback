@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Form = styled.form``;
+export const Form = styled.form`
+padding: 40px 20px;
+`;
 
 export const YourFeedback = styled.h3``;
 

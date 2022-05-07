@@ -7,15 +7,13 @@ import {
   YourFeedback,
   InputGroup,
   InputText,
-  SubmitButton,
 } from "../styledComponents/FeedbackForm.styled";
 
-const FeedbackForm = () => {
+const FeedbackForm = ({ addFeedback }) => {
   const [text, setText] = useState("");
   const [disabled, isDisabled] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(0);
-  console.log(rating);
 
   function handleInputText(e) {
     setText(e.target.value);
@@ -23,12 +21,22 @@ const FeedbackForm = () => {
     if (e.target.value === "" || e.target.value.trim().length <= 10) {
       isDisabled(true);
       setMessage("Text must be greater than 10 character");
+    } else {
+      isDisabled(false);
+      setMessage("");
     }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    addFeedback({ text, rating });
+    setText("");
+    setRating(null);
   }
 
   return (
     <CommonCard>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <YourFeedback>Please type your feedback below.</YourFeedback>
         <RatingSelect select={(rating) => setRating(rating)} />
         <InputGroup>
@@ -36,12 +44,13 @@ const FeedbackForm = () => {
             type="text"
             placeholder="Write your feedback here"
             onChange={handleInputText}
+            value={text}
           />
-          <SubmitButton type="submit" version="primary" isDisabled={disabled}>
+          <Button type="submit" version="primary" isDisabled={disabled}>
             Send
-          </SubmitButton>
+          </Button>
         </InputGroup>
-        {message && <p>{message}</p>}
+        {message && <p style={{ color: "red" }}>{message}</p>}
       </Form>
     </CommonCard>
   );
