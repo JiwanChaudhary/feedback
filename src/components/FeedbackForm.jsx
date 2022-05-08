@@ -29,10 +29,10 @@ const FeedbackForm = ({ addFeedback }) => {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(isDisabled(true));
     addFeedback({ text, rating });
     setText("");
-    setRating(null);
+    setRating("");
   }
 
   return (

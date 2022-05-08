@@ -27,20 +27,19 @@ export const Li = styled.li`
   border: 1px #eee solid;
   transition: 0.3s;
 
-  @media screen and (max-width: 600px) {
-    margin: 10px 3px;
-  }
-
   &:hover {
     background: #ff6a95;
     color: #fff;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 10px 3px;
   }
 `;
 export const Input = styled.input`
   flex-grow: 2;
   border: none;
   font-size: 16px;
-
 `;
 
 export const Label = styled.label`
@@ -53,7 +52,4 @@ export const Label = styled.label`
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  
 `;
-
-

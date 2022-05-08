@@ -3,16 +3,24 @@ import PropTypes from "prop-types";
 import {
   WrapperFeedbackStats,
   AverageRating,
+  TotalRating,
 } from "../styledComponents/FeedbackStats.styled";
 
 const FeedbackStats = ({ feedback }) => {
-  const average =
-    feedback.reduce((acc, cur) => acc + cur.rating, 0) / feedback.length;
-  console.log(average);
+  let average =
+    feedback.reduce((acc, cur) => {
+
+      return Number(acc) + Number(cur.rating);
+    }, 0) / feedback.length;
+
+  average = average.toFixed(1);
 
   return (
     <WrapperFeedbackStats>
-      <AverageRating>Average rating: {average}</AverageRating>
+      <TotalRating>{feedback.length} Reviews</TotalRating>
+      <AverageRating>
+        Average rating: {isNaN(average) ? 0 : average}
+      </AverageRating>
     </WrapperFeedbackStats>
   );
 };

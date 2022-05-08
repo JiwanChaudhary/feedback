@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Ul, Li, Input, Label} from "../styledComponents/RatingSelect.styled"
 
 function RatingSelect({ select }) {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState('');
 
   function handleChange(e) {
     setSelected(e.target.value);

@@ -7,7 +7,7 @@ padding: 0 20px;
 export const Card = styled.div`
   background-color: #fff;
   color: #333;
-  margin: 20px 0;
+  margin: 20px 20px;
   border-radius: 10px;
   position: relative;
 `;

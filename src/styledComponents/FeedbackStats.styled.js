@@ -6,6 +6,15 @@ export const WrapperFeedbackStats = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
+  padding-right: 20px;
 `;
 
-export const AverageRating = styled.h3``;
+export const AverageRating = styled.div`
+  font-weight: bold;
+  font-size: 1rem;
+`;
+
+export const TotalRating = styled.div`
+  font-weight: bold;
+  font-size: 1rem;
+`;
