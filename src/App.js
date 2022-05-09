@@ -10,6 +10,11 @@ import { v4 as uuidv4 } from "uuid";
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
+  const handleFeedback = (userFeedback) => {
+    userFeedback.id = uuidv4();
+    setFeedback([...feedback, userFeedback]);
+  };
+
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
       setFeedback(
@@ -26,12 +31,7 @@ function App() {
   return (
     <>
       <Header />
-      <FeedbackForm
-        addFeedback={(userFeedback) => {
-          userFeedback.id = uuidv4();
-          setFeedback([...feedback, userFeedback]);
-        }}
-      />
+      <FeedbackForm addFeedback={handleFeedback} />
       <FeedbackStats feedback={feedback} />
       <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
     </>
